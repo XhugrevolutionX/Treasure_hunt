@@ -73,5 +73,5 @@ public:
 		}
 	}
 };
-
+//
 #endif // TREASURE_HUNT_H
