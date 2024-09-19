@@ -3,24 +3,40 @@
 
 #include <iostream>
 #include <array>
+#include <algorithm>
+#include <string>
 #include "treasure_hunt.h"
 
 int main()
 {
 	std::srand(std::time(nullptr));
 
+	bool victoire;
+	const int tries_ = 10;
+
 	Map map;
 
 	map.initialize();
 	map.place_treasure();
 
-	for(int tries = 0; tries < 10; tries++)
+	for(int tries = 1; tries <= tries_; tries++)
 	{
 		map.display();
-		map.dig();
+		victoire = map.dig();
+
+		system("cls");
+		if(tries >= tries_ && !victoire)
+		{
+			std::cout << "Bravo vous avez perdu\n";
+		}
+		else if(victoire)
+		{
+			std::cout << "Bravo vous avez gagner\n";
+			tries = tries_;
+		}
+		
+
 	}
-
-
-
-	//(rows - 1) * size rows + (col - 1)
+	map.display();
+	std::cout << "Fin de partie\n";
 }
