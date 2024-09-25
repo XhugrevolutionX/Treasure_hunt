@@ -39,4 +39,5 @@ int main()
 	}
 	map.display();
 	std::cout << "Fin de partie\n";
+	system("pause");
 }
