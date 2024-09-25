@@ -12,6 +12,7 @@ enum class Tiles
 
 constexpr int map_height = 5;
 constexpr int map_lenght = 5;
+constexpr int map_size = map_lenght * map_height;
 
 class Map {
 
@@ -19,7 +20,7 @@ public:
 
 	int treasure;
 	
-	std::array<Tiles, 25> map;
+	std::array<Tiles, map_size> map;
 
 	void initialize()
 	{
@@ -29,7 +30,6 @@ public:
 	{
 		treasure = std::rand() % map.size();
 		//treasure = 0;
-		//map.at(treasure) = Tiles::k_treasure;
 	}
 	bool dig()
 	{
@@ -155,7 +155,7 @@ public:
 					break;
 			}
 
-			if(idx % 5 == 4)
+			if(idx % map_lenght == map_lenght - 1)
 			{
 				std::cout << "\n";
 			}
