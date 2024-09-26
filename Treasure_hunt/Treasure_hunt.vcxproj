@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Treasure_hunt.cpp" />
+    <ClCompile Include="treasure_hunt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="treasure_hunt.h" />
